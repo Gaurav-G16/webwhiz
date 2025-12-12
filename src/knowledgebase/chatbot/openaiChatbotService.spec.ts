@@ -52,9 +52,9 @@ describe('getChatGptPrompt', () => {
         createdAt: new Date(),
         updatedAt: new Date(),
       })),
-      [
-  {
-    id: '1',
+    [
+      {
+         id: '1',
     msg: TOKEN_TEXT_423,
     sender: 'bot',
     sessionId: 'session1',
@@ -63,7 +63,7 @@ describe('getChatGptPrompt', () => {
     qTokens: 423,
     aTokens: 423,
     ts: new Date(),
-  },
+      },
   {
     id: '2',
     msg: TOKEN_TEXT_423,
@@ -74,14 +74,12 @@ describe('getChatGptPrompt', () => {
     qTokens: 1,
     aTokens: 200,
     ts: new Date(),
-  },
-]
-
-      undefined,
-      undefined,
-      4000,
-    );
-
+  }
+],
+undefined,
+undefined,
+4000
+); 
     expect(
       openaiCbService.getTokenCountForChatGptMessages(prompt),
     ).toBeLessThan(4000);
